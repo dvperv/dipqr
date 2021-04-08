@@ -1,0 +1,23 @@
+{
+  "name": "dipqr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "engines": {
+    "node": ">=15.7.0"
+  },
+  "scripts": {
+    "start-dev": "run.bat",
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.14.2",
+    "fastify-cors": "^5.2.0",
+    "mongoose": "^5.12.3",
+    "qrcode": "^1.4.4"
+  }
+}
