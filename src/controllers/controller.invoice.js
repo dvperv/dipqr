@@ -1,4 +1,7 @@
 const model = require('../model/model.invoice');
+const config = require('../config')
+const qrcode = require('../utils/qrcode.generator.util')
+const basepathInvoiceAPI = config.basepath + '/api/invoice'
 
 module.exports = {
     //# create
@@ -6,7 +9,11 @@ module.exports = {
         try {
             const invoice = request.body;
             const newInvoice = await model.create(invoice);
-            reply.code(201).send(newInvoice);
+            reply.code(201).send({
+                invoice: newInvoice,
+                // path: `${basepathInvoiceAPI}/${newInvoice.id}`,
+                qr: await qrcode(`${basepathInvoiceAPI}/${newInvoice.id}`),
+            });
         } catch (e) {
             reply.code(500).send(e);
         }

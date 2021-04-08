@@ -1,4 +1,5 @@
 module.exports = {
+    basepath: "http:/localhost:3000",
     host: process.env.RHST,
     port: process.env.RPRT,
     username: process.env.RLGN,
